@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FP 헬퍼 | fpassistant</title>
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --border:#e6e8ec;
+    --text:#1b1f27;
+    --sub:#6b7280;
+    --accent:#2454ff;
+    --accent-soft:#eaf0ff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding:56px 24px 80px;
+  }
+  header{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:44px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.06em;
+    color:var(--accent);
+    text-transform:uppercase;
+  }
+  .brand .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    display:inline-block;
+  }
+  h1{
+    font-size:34px;
+    font-weight:800;
+    margin:0;
+    letter-spacing:-0.02em;
+  }
+  .tagline{
+    font-size:15px;
+    color:var(--sub);
+    margin:0;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    gap:14px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    text-decoration:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  }
+  .card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(20,30,60,0.07);
+    border-color:#d7ddf5;
+  }
+  .icon{
+    width:38px;height:38px;
+    border-radius:10px;
+    background:var(--accent-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--accent);
+  }
+  .icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .label{
+    font-size:15.5px;
+    font-weight:600;
+    line-height:1.4;
+  }
+  footer{
+    margin-top:56px;
+    font-size:12.5px;
+    color:var(--sub);
+  }
+  @media (max-width:480px){
+    .wrap{padding:40px 16px 60px;}
+    h1{font-size:26px;}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span>fpassistant</div>
+      <h1>FP 헬퍼</h1>
+      <p class="tagline">보험설계사를 위한 스마트 업무 비서</p>
+    </header>
+
+    <main class="grid">
+
+      <a class="card" href="#" data-menu="notice">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h6M9 8h3"/></svg>
+        </span>
+        <span class="label">고지사항 정리</span>
+      </a>
+
+      <a class="card" href="#" data-menu="hidden-money">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+        </span>
+        <span class="label">숨은 보험금 찾기</span>
+      </a>
+
+      <a class="card" href="#" data-menu="coverage-excel">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg>
+        </span>
+        <span class="label">보장분석 엑셀 만들기</span>
+      </a>
+
+      <a class="card" href="#" data-menu="calculator">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01"/></svg>
+        </span>
+        <span class="label">시책계산기</span>
+      </a>
+
+      <a class="card" href="#" data-menu="claim-doc">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/><path d="M12.5 12.5l3 3L11 20l-3 .5.5-3z"/></svg>
+        </span>
+        <span class="label">보험청구서 만들기</span>
+      </a>
+
+      <a class="card" href="#" data-menu="portal-link">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><path d="M9 15L20 4"/><path d="M14 4h6v6"/><path d="M20 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg>
+        </span>
+        <span class="label">공시실/영업포탈 바로가기</span>
+      </a>
+
+      <a class="card" href="#" data-menu="news">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><path d="M4 5h13a2 2 0 0 1 2 2v12a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2z"/><path d="M19 19a2 2 0 0 0 2-2V8h-2"/><path d="M7 8h7M7 12h7M7 16h4"/></svg>
+        </span>
+        <span class="label">보험뉴스</span>
+      </a>
+
+      <a class="card" href="#" data-menu="scout">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><path d="M18 8v5M15.5 10.5h5"/></svg>
+        </span>
+        <span class="label">스카우트</span>
+      </a>
+
+      <a class="card" href="#" data-menu="board">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg>
+        </span>
+        <span class="label">자유게시판</span>
+      </a>
+
+      <a class="card" href="#" data-menu="promote">
+        <span class="icon">
+          <svg viewBox="0 0 24 24"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 8a4 4 0 0 1 0 8M18 5a8 8 0 0 1 0 14"/></svg>
+        </span>
+        <span class="label">홍보하기</span>
+      </a>
+
+    </main>
+
+    <footer>fpassistant · FP 헬퍼</footer>
+  </div>
+</body>
+</html>
